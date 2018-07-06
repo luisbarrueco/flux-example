@@ -12,6 +12,7 @@ spec:
     spec:
       securityContext:
         runAsUser: 0
+      serviceAccount: flux
       containers:
       - name: helloworld
         image: quay.io/weaveworks/helloworld:master-a000001
