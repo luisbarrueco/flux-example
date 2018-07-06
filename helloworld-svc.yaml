@@ -3,7 +3,11 @@ kind: Service
 metadata:
   name: helloworld
 spec:
+  type: ClusterIP
   ports:
-    - port: 80
+    - name: helloworld
+      port: 8080
+      targetPort: 80
+      protocol: TCP
   selector:
     name: helloworld
