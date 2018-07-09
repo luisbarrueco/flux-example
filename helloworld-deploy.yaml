@@ -14,9 +14,9 @@ spec:
         runAsUser: 0
       containers:
       - name: helloworld
-        image: quay.io/weaveworks/helloworld:master-a000001
+        image: luisbarrueco/flux-example:v0.0.1
         args:
-        - -msg=Ahoy
+        - -msg=Hello, world
         ports:
         - containerPort: 8081
       - name: sidecar
