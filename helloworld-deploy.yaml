@@ -12,6 +12,10 @@ spec:
     spec:
       securityContext:
         runAsUser: 0
+      volumes:
+        - name: secret-volume
+          secret:
+            secretName: test-secret
       containers:
       - name: helloworld
         image: luisbarrueco/flux-example:v0.0.1
@@ -19,6 +23,9 @@ spec:
         - -msg=Hello, world
         ports:
         - containerPort: 8081
+        volumeMounts:
+          - name: secret-volume
+            mountPath: /etc/secret-volume
       - name: sidecar
         image: quay.io/weaveworks/sidecar:master-a000001
         args:
