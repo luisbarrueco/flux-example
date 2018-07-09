@@ -10,3 +10,4 @@ spec:
     kind: Service
     name: helloworld
     weight: 100
+  tls: {}
